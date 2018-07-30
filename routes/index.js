@@ -2,6 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { body, validationResult } = require('express-validator/check');
 
+const path = require('path');
+const auth = require('http-auth');
+
+const basic = auth.basic({
+  file: path.join(__dirname, '../users.htpasswd'),
+});
+
 const router = express.Router();
 const Registration = mongoose.model('Registration');
 
@@ -38,7 +45,7 @@ router.post('/',
     }
 });
 
-router.get('/registrations', (req, res) => {
+router.get('/registrations', auth.connect(basic), (req, res) => {
   Registration.find()
     .then((registrations) => {
       res.render('index', {title: 'Listing Regestrations', registrations });
