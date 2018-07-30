@@ -38,4 +38,14 @@ router.post('/',
     }
 });
 
+router.get('/registrations', (req, res) => {
+  Registration.find()
+    .then((registrations) => {
+      res.render('index', {title: 'Listing Regestrations', registrations });
+    })
+    .catch(() => { res.send('Sorry! Something went wrong.');
+    })
+});
+
+
 module.exports = router;
