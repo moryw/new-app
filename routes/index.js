@@ -33,9 +33,13 @@ router.post('/',
     if (errors.isEmpty()) {
       const registration = new Registration(req.body);
       registration.save()
-        .then(() => { res.send('Thank you for your registration!'); })
-        .catch(() => { res.send('Sorry! Something went wrong.'); });
-        console.log();
+        .then(() => {
+        res.render('form-success', {title: 'Registration success'});
+        })
+        .catch(() => {
+          res.send('Sorry! Something went wrong.');
+        });
+
     } else {
       res.render('form', {
         title: 'Registration form',

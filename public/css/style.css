@@ -23,6 +23,21 @@ body {
 .form-registration .btn {
   flex: 1 0 100%;
 }
+
+h3.form-success {
+  text-align: center;
+  margin: 0 0 2rem;
+  padding: 1rem 0;
+  color: #28a745;
+  background-color: lightgreen;
+}
+
+a.form-success {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
 .my-errors {
   margin: 0 auto;
   padding: 0;
