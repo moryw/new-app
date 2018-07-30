@@ -16,6 +16,7 @@
     "express-validator": "^5.3.0",
     "http-auth": "^3.2.3",
     "mongoose": "^5.2.5",
+    "now": "^11.3.3",
     "pug": "^2.0.3"
   },
   "devDependencies": {
